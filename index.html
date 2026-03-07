@@ -29,21 +29,22 @@
         <!-- login from  -->
          <form action="" class="mt-[24px]  flex flex-col space-y-[16px] ">
           <div class="flex flex-col space-y-2">
-            <label for="Username" class="text-[#1F2937] font-[500] text-[16px]">Username</label>
-            <input type="text" placeholder="Enter Username" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
+            <label  for="Username" class="text-[#1F2937] font-[500] text-[16px]">Username</label>
+            <input id="Username" type="text" placeholder="Enter Username" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
             <p class="text-[#4A00FF] text-[14px]">Default: admin</p>
           </div>
           <div class="flex flex-col space-y-2">
             <label for="Password" class="text-[#1F2937] font-[500] text-[16px]">Password</label>
-            <input type="text" placeholder="Enter Password" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
+            <input id="password" type="text" placeholder="Enter Password" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
             <p class="text-[#4A00FF] text-[14px]">Default: admin123</p>
           </div>
          </form>
          <!-- login button -->
         <div class="mt-6">
-          <button class="btn btn-primary btn-block text-white bg-[#4A00FF] p-4 rounded-[8px]">Sign In</button>
+          <button id="loginButton" class="btn btn-primary btn-block text-white bg-[#4A00FF] p-4 rounded-[8px]">Sign In</button>
         </div>
       </div>
     </div>
+    <script src="./js/login.js"></script>
   </body>
 </html>
