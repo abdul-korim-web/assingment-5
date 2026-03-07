@@ -1,13 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logion | GitHub Issues Tracker </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | GitHub Issues Tracker</title>
     <!-- favicon added  -->
-     <link rel="shortcut icon" href="./images/favLogo.png" type="image/x-icon">
-</head>
-<body>
-    
-</body>
+    <link rel="shortcut icon" href="./images/favLogo.png" type="image/x-icon" />
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--  daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen flex flex-col justify-center items-center">
+    <div class="card w-96 bg-base-100 shadow-sm">
+      <div class="card-body">
+        <div class="flex flex-col justify-center items-center space-y-[24px]">
+            <img class="max-w-[100px] max-h-[100px]" src="./images/github-logo.png" alt="github-logo">
+            <div class="flex flex-col justify-center items-center space-y-[4px]">
+              <h2 class="font-[600] text-[24px] text-[#1F2937] ">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B] text-[16px]">Sign in to manage your issues</p>
+            </div>
+        </div>
+        <!-- login from  -->
+         <form action="" class="mt-[24px]  flex flex-col space-y-[16px] ">
+          <div class="flex flex-col space-y-2">
+            <label for="Username" class="text-[#1F2937] font-[500] text-[16px]">Username</label>
+            <input type="text" placeholder="Enter Username" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
+            <p class="text-[#4A00FF] text-[14px]">Default: admin</p>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <label for="Password" class="text-[#1F2937] font-[500] text-[16px]">Password</label>
+            <input type="text" placeholder="Enter Password" class="input rounded-[8px] border border-[#E4E4E7] p-4 outline-2  focus:outline-[#4A00FF]" />
+            <p class="text-[#4A00FF] text-[14px]">Default: admin123</p>
+          </div>
+         </form>
+         <!-- login button -->
+        <div class="mt-6">
+          <button class="btn btn-primary btn-block text-white bg-[#4A00FF] p-4 rounded-[8px]">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
