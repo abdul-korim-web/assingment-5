@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Home | GitHub Issues Tracker</title>
+      <!-- favicon added  -->
+      <link
+        rel="shortcut icon"
+        href="./images/favLogo.png"
+        type="image/x-icon"
+      />
+      <!-- tailwind css -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <!--  daisyUI -->
+      <link
+        href="https://cdn.jsdelivr.net/npm/daisyui@5"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+  </head>
+  <body class="max-w-[1600px] mx-auto">
+    <header>
+      <nav class="flex justify-between items-center px-[20px] py-3 md:px-[80px] md:py-[16px] ">
+        <!-- logo div -->
+        <div class="flex items-center space-x-1 ">
+          <img src="./images/github-logo.png" alt="" class="w-[36px] h-[36px]" />
+          <h2 class=" hidden md:flex font-[600] md:text-[24px] text-[#1F2937]">GitHub Issues Tracker</h2>
+        </div>
+        <!--  search  -->
+        <div class="flex items-center space-x-4 ">
+            <input type="text" placeholder="Search issues..." class="input p-4 rounded-[4px] lg:w-[300px]     focus:outline-[#4A00FF] " />
+            <button  class="btn btn-primary px-4 py-3 bg-[#4A00FF] text-white" >New Issue</button>
+            
+        </div>
+      </nav>
+    </header>
+  </body>
 </html>
