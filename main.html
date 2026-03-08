@@ -19,24 +19,62 @@
         rel="stylesheet"
         type="text/css"
       />
+      <!--  css -->
+      <link rel="stylesheet" href="./style.css" />
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
   </head>
-  <body class="max-w-[1600px] mx-auto">
-    <header>
-      <nav class="flex justify-between items-center px-[20px] py-3 md:px-[80px] md:py-[16px] ">
+  <body class="max-w-[2100px] mx-auto min-h-screen bg-[#f8fafc]">
+    <header class="bg-white border border-b border-[#ffffff50] shadow-sm">
+      <nav
+        class="flex justify-between items-center px-[20px] py-3 md:px-[80px] md:py-[16px]"
+      >
         <!-- logo div -->
-        <div class="flex items-center space-x-1 ">
-          <img src="./images/github-logo.png" alt="" class="w-[36px] h-[36px]" />
-          <h2 class=" hidden md:flex font-[600] md:text-[24px] text-[#1F2937]">GitHub Issues Tracker</h2>
+        <div class="flex items-center space-x-1">
+          <img
+            src="./images/github-logo.png"
+            alt=""
+            class="w-[36px] h-[36px]"
+          />
+          <h2 class="hidden md:flex font-[600] md:text-[24px] text-[#1F2937]">
+            GitHub Issues Tracker
+          </h2>
         </div>
         <!--  search  -->
-        <div class="flex items-center space-x-4 ">
-            <input type="text" placeholder="Search issues..." class="input p-4 rounded-[4px] lg:w-[300px]     focus:outline-[#4A00FF] " />
-            <button  class="btn btn-primary px-4 py-3 bg-[#4A00FF] text-white" >New Issue</button>
-            
+        <div class="flex items-center space-x-4">
+          <input
+            type="text"
+            placeholder="Search issues..."
+            class="input p-4 rounded-[4px] lg:w-[300px] focus:outline-[#4A00FF]"
+          />
+          <button class="btn btn-primary px-4 py-3 bg-[#4A00FF] text-white">
+            New Issue
+          </button>
         </div>
       </nav>
     </header>
+    <section
+      class=" px-5 md:max-w-[90%] mx-auto mt-[30px] md:mt-[60px]"
+    >
+      <div
+        class="flex items-center bg-white p-[24px] space-x-2 border border-white shadow-md rounded-[8px]"
+      >
+        <button
+          class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B] active"
+        >
+          All
+        </button>
+        <button
+          class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
+        >
+          Open
+        </button>
+        <button
+          class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
+        >
+          Closed
+        </button>
+      </div>
+    </section>
   </body>
 </html>
