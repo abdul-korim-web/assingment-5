@@ -57,6 +57,7 @@
       <div class="flex items-center bg-white p-[24px] space-x-2">
         <button
         id="Allbtn"
+        onclick="buttonColorChange('Allbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
         onclick="buttonColorChange('Allbtn')"
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B] active"
         >
@@ -64,14 +65,14 @@
         </button>
         <button
         id="Openbtn"
-        onclick="buttonColorChange('Openbtn')"
+        onclick="buttonColorChange('Openbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
         >
           Open
         </button>
         <button
         id="Closedbtn"
-        onclick="buttonColorChange('Closedbtn')"
+        onclick="buttonColorChange('Closedbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
         >
           Closed
@@ -112,7 +113,7 @@
        
       </section>
     </section>
-    <script src="./js/buttonColorChange.js"></script>
+    <!-- <script src="./js/buttonColorChange.js"></script> -->
     <script src="./js/getAllIssues.js"></script>
   </body>
 </html>

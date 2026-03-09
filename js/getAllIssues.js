@@ -1,12 +1,30 @@
-document.getElementById("Allbtn").addEventListener("click", async () => {
+
+const buttonColorChange = async (target,api) => {
+  const allbtn = document.getElementById("Allbtn")
+    const openbtn = document.getElementById("Openbtn")
+    const closebtn = document.getElementById("Closedbtn")
+    const clickbtn = document.getElementById(target)
+    allbtn.classList.remove("active")
+    openbtn.classList.remove("active")
+    closebtn.classList.remove("active")
+    clickbtn.classList.add("active")
   try {
     const totalIssuesElement = document.getElementById("countIssues");
     const cardSection = document.getElementById("cardSection");
     const response = await fetch(
-      "https://phi-lab-server.vercel.app/api/v1/lab/issues",
+      api
     );
     const data = await response.json();
-    const cardData = data?.data;
+    let cardData = data?.data;
+    if (target =="Openbtn") {
+      console.log(`click`);
+      cardData = cardData?.filter(card=>card?.status=="open")
+      
+    }
+    if (target =="Closedbtn") {
+      cardData = cardData?.filter(card=>card?.status=="closed")
+      
+    }
     totalIssuesElement.innerText = cardData?.length;
     cardSection.innerHTML = "";
     cardData.map((data) => {
@@ -50,6 +68,6 @@ document.getElementById("Allbtn").addEventListener("click", async () => {
       cardSection.innerHTML += card;
     });
   } catch (error) {
-    console.log(error?.message || error);
+    console.log(error?.message || error)
   }
-});
+}
