@@ -1,29 +1,45 @@
-
-const buttonColorChange = async (target,api) => {
-  const allbtn = document.getElementById("Allbtn")
-    const openbtn = document.getElementById("Openbtn")
-    const closebtn = document.getElementById("Closedbtn")
-    const clickbtn = document.getElementById(target)
-    allbtn.classList.remove("active")
-    openbtn.classList.remove("active")
-    closebtn.classList.remove("active")
-    clickbtn.classList.add("active")
+const buttonColorChange = async (target, api) => {
+  const allbtn = document.getElementById("Allbtn");
+  const openbtn = document.getElementById("Openbtn");
+  const closebtn = document.getElementById("Closedbtn");
+  const clickbtn = document.getElementById(target);
+  allbtn.classList.remove("active");
+  openbtn.classList.remove("active");
+  closebtn.classList.remove("active");
+  clickbtn?.classList?.add("active");
   try {
     const totalIssuesElement = document.getElementById("countIssues");
     const cardSection = document.getElementById("cardSection");
-    const response = await fetch(
-      api
-    );
+    const response = await fetch(api);
     const data = await response.json();
     let cardData = data?.data;
-    if (target =="Openbtn") {
+    if (target == "Openbtn") {
       console.log(`click`);
-      cardData = cardData?.filter(card=>card?.status=="open")
-      
+      cardData = cardData?.filter((card) => card?.status == "open");
     }
-    if (target =="Closedbtn") {
-      cardData = cardData?.filter(card=>card?.status=="closed")
+    if (target == "Closedbtn") {
+      cardData = cardData?.filter((card) => card?.status == "closed");
+    }
+    if (target == "Search") {
+      const searchInputElement = document.getElementById("searchInput");
+
+      const searchText = searchInputElement.value;
       
+      //  no input value
+      if (!searchText) {
+        return alert("search input are requird")
+        
+      }
+      //  input type check
+      if (typeof searchText !=="string") {
+        return alert("search input must be a string value")
+      }
+      const searchApi =`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`
+      const responseSearchData = await fetch(searchApi);
+    const Searchdata = await responseSearchData.json();
+     cardData = Searchdata?.data;
+     searchInputElement.value = ""
+
     }
     totalIssuesElement.innerText = cardData?.length;
     cardSection.innerHTML = "";
@@ -46,8 +62,8 @@ const buttonColorChange = async (target,api) => {
             <div class="flex space-x-1 items-center   ">
             
             ${data?.labels
-  ?.map(
-    (label) => `
+              ?.map(
+                (label) => `
     <div class="rounded-[100px] bg-[#FEECEC] text-[#EF4444] text-[12px] uppercase text-center font-[500] px-3 flex items-center gap-2">
    <div class="flex items-center gap-1">
       <img src="./images/BugDroid.png" alt="">
@@ -55,8 +71,8 @@ const buttonColorChange = async (target,api) => {
    </div>
    </div>
 `,
-  )
-  .join("")}
+              )
+              .join("")}
             </div>
             <div class="mt-[30px]  border-t-2 border-gray-200 pt-2">
               <h2 class="text-[14px] text-[#64748B]">#1 by ${data?.author}</h2>
@@ -68,6 +84,12 @@ const buttonColorChange = async (target,api) => {
       cardSection.innerHTML += card;
     });
   } catch (error) {
-    console.log(error?.message || error)
+    console.log(error?.message || error);
   }
-}
+};
+
+//  first call function
+buttonColorChange(
+  "Allbtn",
+  "https://phi-lab-server.vercel.app/api/v1/lab/issues",
+);
