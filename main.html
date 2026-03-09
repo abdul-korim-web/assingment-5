@@ -43,12 +43,20 @@
         <!--  search  -->
         <div class="flex items-center space-x-4">
           <input
-          id="searchInput"
+            id="searchInput"
             type="text"
             placeholder="Search issues..."
             class="input p-4 rounded-[4px] lg:w-[300px] focus:outline-[#4A00FF]"
           />
-          <button onclick="buttonColorChange('Search','https://phi-lab-server.vercel.app/api/v1/lab/issues')" class="btn btn-primary px-4 py-3 bg-[#4A00FF] text-white">
+          <button
+            onclick="
+              buttonColorChange(
+                'Search',
+                'https://phi-lab-server.vercel.app/api/v1/lab/issues',
+              )
+            "
+            class="btn btn-primary px-4 py-3 bg-[#4A00FF] text-white"
+          >
             Search Issue
           </button>
         </div>
@@ -57,23 +65,37 @@
     <section class="px-5 md:max-w-[90%] mx-auto mt-[30px] md:mt-[60px]">
       <div class="flex items-center bg-white p-[24px] space-x-2">
         <button
-        id="Allbtn"
-        onclick="buttonColorChange('Allbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
-
+          id="Allbtn"
+          onclick="
+            buttonColorChange(
+              'Allbtn',
+              'https://phi-lab-server.vercel.app/api/v1/lab/issues',
+            )
+          "
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B] active"
         >
           All
         </button>
         <button
-        id="Openbtn"
-        onclick="buttonColorChange('Openbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
+          id="Openbtn"
+          onclick="
+            buttonColorChange(
+              'Openbtn',
+              'https://phi-lab-server.vercel.app/api/v1/lab/issues',
+            )
+          "
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
         >
           Open
         </button>
         <button
-        id="Closedbtn"
-        onclick="buttonColorChange('Closedbtn','https://phi-lab-server.vercel.app/api/v1/lab/issues')"
+          id="Closedbtn"
+          onclick="
+            buttonColorChange(
+              'Closedbtn',
+              'https://phi-lab-server.vercel.app/api/v1/lab/issues',
+            )
+          "
           class="btn px-[20px] md:px-[50px] py-3 rounded-[4px] bg-white text-[#64748B]"
         >
           Closed
@@ -89,7 +111,9 @@
               <img src="./images/Aperture.png" alt="" />
             </div>
             <div>
-              <h2 class="text-[#1F2937] text-[20px] font-[600]"><span id="countIssues">0</span> Issues</h2>
+              <h2 class="text-[#1F2937] text-[20px] font-[600]">
+                <span id="countIssues">0</span> Issues
+              </h2>
               <p class="hidden md:flex md:text-[#64748B] md:text-[16px]">
                 Track and manage your project issues
               </p>
@@ -108,13 +132,20 @@
         </div>
       </section>
       <!-- card section -->
-      <section id="cardSection" class="p-[24px] flex flex-wrap space-x-3 space-y-3 mt-[24px] border  rounded-[8px] border-gray-200  ">
-       
-        
-       
-      </section>
+      <section
+        id="cardSection"
+        class="p-[24px] flex flex-wrap space-x-3 space-y-3 mt-[24px] border rounded-[8px] border-gray-200"
+      ></section>
     </section>
+    <!--  modal section -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="issueModal" class="modal bg-[#4A00FF]/20">
+      <div class="modal-box" id="modal-box">
+        
+      </div>
+    </dialog>
     <!-- <script src="./js/buttonColorChange.js"></script> -->
     <script src="./js/getAllIssues.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
