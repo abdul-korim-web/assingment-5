@@ -1,5 +1,4 @@
 const buttonColorChange = (id)=>{
-    console.log(id);
     const allbtn = document.getElementById("Allbtn")
     const openbtn = document.getElementById("Openbtn")
     const closebtn = document.getElementById("Closedbtn")
